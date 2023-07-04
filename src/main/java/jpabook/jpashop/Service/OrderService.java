@@ -43,7 +43,7 @@ public class OrderService {
         Order order = Order.createOrder(member, delivery, orderItem);
 
         //주문 저장
-        //하나만 저장해줘도 CascadeAll이기 때문에 member, delivery, orderitem도 자동으로 persist 됨!
+        //하나만 저장해줘도 CascadeAll이기 때문에 delivery, orderitem도 자동으로 persist 됨!
         orderRepository.save(order);
         return order.getId();
     }
